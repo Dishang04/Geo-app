@@ -1,0 +1,254 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body {
+  font-weight: 400;
+  font-family: "Epilogue", sans-serif;
+  background-color: #f6f6f6;
+}
+
+/* NAV */
+.nav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f6f6f6;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 5.5rem;
+}
+
+.nav__filterMenu {
+  font-size: 2.2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: #f6f6f6;
+  border: none;
+  outline: none;
+}
+
+.nav__filter__span{
+  float: left;
+  margin-right: 0.5rem;
+}
+
+.nav__filter__span__filterIcon{
+  width: 2.6rem;
+}
+
+.nav__closebtn {
+  position: absolute;
+  top: 0;
+  right: 2.5rem;
+  font-size: 3.4rem;
+  cursor: pointer;
+}
+
+.nav__closebtn__filter{
+  font-size: 2.4rem;
+  margin-right: 15rem;
+}
+
+.nav__p{
+  margin: 3rem 0.8rem 0.8rem 2.5rem;
+  font-size: 2rem;
+  color: #333;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav__radioButton{
+  margin: 0.8rem 0.8rem 0.8rem 2.5rem;
+  cursor: pointer;
+}
+
+.nav__label{
+  font-size: 1.6rem;
+}
+
+.nav__filterButton{
+  margin: 3rem 0.8rem 0.8rem 2.5rem;
+  padding: 0.5rem 4rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.nav__filterButton:hover{
+  background-color: #555;
+  color: white;
+  border: #555;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  margin: 0.8rem 0.8rem 0.8rem 2.5rem;
+  width: 6rem;
+  height: 2.5rem;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.7rem;
+  width: 1.7rem;
+  left: 1rem;
+  bottom: 0.4rem;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 0.1rem #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(2.6rem);
+  -ms-transform: translateX(2.6rem);
+  transform: translateX(2.6rem);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 3.4rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media screen and (max-height: 450px) {
+  .nav {padding-top: 1.5rem;}
+  .nav a {font-size: 1.8rem;}
+}
+
+.title{
+  text-align: center;
+  /* background-color: red; */
+  padding-bottom: 2rem;
+  font-weight: 500;
+  font-size: 2.4rem;
+}
+
+#map{
+    position: absolute;
+    top: 8rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -10;
+}
+
+.northArrow{
+  margin-right: 50%;
+}
+
+/* INFORMATION ON HOVER */
+.info {
+  padding: 0.6rem 0.8rem;
+  font: 1.4rem Arial, Helvetica, sans-serif;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 1.5rem rgba(0,0,0,0.2);
+  border-radius: 0.5rem;
+  line-height: 1.5;
+}
+
+.info h4 {
+  margin: 0 0 0.5rem;
+  color: #777;
+}
+
+/* LEGEND */
+.legend {
+  width: 18rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.6rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+  line-height: 2.4rem;
+  color: #555;
+}
+
+.leaflet-bottom .leaflet-control{
+  margin: 5rem;
+}
+
+.legendTitle {
+  text-align: center;
+  margin: 0.2rem 1.2rem 0.8rem;
+}
+
+.legendTitle--h4{
+  font-size: 1.8rem;
+  color: #5e5e5e;
+}
+
+.legendTitle--h3{
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  color: #777;
+}
+
+.legend i {
+  width: 2rem;
+  height: 2rem;
+  float: left;
+  margin: 0 0.8rem 0 0;
+  opacity: 0.7;
+}
+
+.legendIcon {
+  background-size: 1.8rem;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.linearGradient{
+  margin-top: 0.5rem;
+  width: 16rem;
+  height: 0.5rem;
+  background-image: linear-gradient(to right, #cdf8b3, #449e0f , #295f09);
+  border: black;
+}
+
+.gradientAmount{
+  font-size: 1.4rem;
+}
+
+.gradientAmount--high{
+  float: right;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <title>Windmolen</title>
+</head>
+<body>
+  <header>
+    <nav id="nav" class="nav">
+      <div class="nav__closebtn" onclick="closeNav()"><span class="nav__closebtn__filter"> Filters</span> &times;</div>
+      <p class="nav__p">Informatie windmolens in:</p>
+      <input class="nav__radioButton" type="radio" id="map2018" name="mapPickAmount" value="2018" checked>
+      <label class="nav__label" for="map2018">2018</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="map2019" name="mapPickAmount" value="2019">
+      <label class="nav__label" for="map2019">2019</label>
+
+      <p class="nav__p">Meetstations tonen: </p>
+      <label class="switch">
+        <input type="checkbox" id="weatherStation" name="weatherStation" value="weatherStation" checked>
+        <span class="slider round"></span>
+      </label>
+
+      <p class="nav__p">Bedrijven windparken:</p>
+      <input class="nav__radioButton" type="radio" id="all" name="company" value="all" checked>
+      <label class="nav__label" for="all">Alle</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="alteLeipziger" name="company" value="Alte Leipziger/Hallesche">
+      <label class="nav__label" for="alteLeipziger">Alte Leipziger/Hallesche</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="Blauwwind" name="company" value="Blauwwind">
+      <label class="nav__label" for="Blauwwind">Blauwwind</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="Eneco" name="company" value="Eneco">
+      <label class="nav__label" for="Eneco">Eneco</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="HVC" name="company" value="HVC">
+      <label class="nav__label" for="HVC">HVC</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="mc" name="company" value="Mitsubishi Corporatio (MC)">
+      <label class="nav__label" for="mc">Mitsubishi Corporatio (MC)</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="NorthlandPower" name="company" value="Northland Power">
+      <label class="nav__label" for="NorthlandPower">Northland Power</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="Ørsted" name="company" value="Ørsted">
+      <label class="nav__label" for="Ørsted">Ørsted</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="Shell" name="company" value="Shell">
+      <label class="nav__label" for="Shell">Shell</label>
+      <br>
+      <input class="nav__radioButton" type="radio" id="Siemens" name="company" value="Siemens">
+      <label class="nav__label" for="Siemens">Siemens</label>
+      <br>
+      <button class="nav__filterButton" onclick="filter(), closeNav()">filter</button>
+    </nav>
+    <button class="nav__filterMenu" onclick="openNav()"> <span class="nav__filter__span"><img class="nav__filter__span__filterIcon" src="./img/filterIcon.png" alt="filter icoon afbeelding"></span> Filter</button>
+  </header>
+  <main>
+    <h1 class="title">Windmolens in Nederland</h1>
+    <div id="map"></div>
+  </main>
+  <script src="./geojson/windmolens2018.geojson"></script>
+  <script src="./geojson/windmolens2019.geojson"></script>
+  <script src="./geojson/windmolenparken3.geojson"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
